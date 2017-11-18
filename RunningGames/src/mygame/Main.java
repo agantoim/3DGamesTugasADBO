@@ -47,8 +47,8 @@ public class Main extends SimpleApplication {
         ambient.setColor(ColorRGBA.White);
         rootNode.addLight(ambient);
         
-        Spatial bm = assetManager.loadModel("Models/Character_fixbckup/Character_fixbckup.j3o");
-        rootNode.attachChild(bm);
+        //Spatial bm = assetManager.loadModel("Models/Character_fixbckup/Character_fixbckup.j3o");
+        //rootNode.attachChild(bm);
         
         Spatial scene=assetManager.loadModel("Scenes/newScene.j3o");
         rootNode.attachChild(scene);
