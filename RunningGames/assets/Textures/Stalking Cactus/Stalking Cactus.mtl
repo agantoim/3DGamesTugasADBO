@@ -1,0 +1,35 @@
+# Blender3D MTL File: Stalking Cactus.blend
+# Material Count: 3
+newmtl Material.050_Spikes.png
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.737500 0.737500 0.756250
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Spikes.png
+
+
+newmtl Material.051_Body.png
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.559375 0.559375 0.559375
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Body.png
+
+
+newmtl Material.049_Spikes.png
+Ns 0.000000
+Ka 0.000000 0.000000 0.000000
+Kd 0.290625 0.290625 0.306250
+Ks 0.000000 0.000000 0.000000
+Ni 1.000000
+d 1.000000
+illum 2
+map_Kd Spikes.png
+
+
