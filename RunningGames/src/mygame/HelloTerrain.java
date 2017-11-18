@@ -82,7 +82,7 @@ public class HelloTerrain extends SimpleApplication {
      * 3.5) We supply the prepared heightmap itself.
      */
     int patchSize = 65;
-    terrain = new TerrainQuad("my terrain", patchSize, 513, heightmap.getHeightMap());
+    terrain = new TerrainQuad("my terrain", patchSize, 129, heightmap.getHeightMap());
 
     /** 4. We give the terrain its material, position & scale it, and attach it. */
     terrain.setMaterial(mat_terrain);

@@ -37,8 +37,9 @@ public class Main extends SimpleApplication {
 
     @Override
     public void simpleInitApp() {
+        flyCam.setMoveSpeed(500);
         
-        this.flyCam.setEnabled(false);
+        this.flyCam.setEnabled(true);
         this.setDisplayFps(false);
         
         DirectionalLight ambient = new DirectionalLight();
@@ -46,8 +47,11 @@ public class Main extends SimpleApplication {
         ambient.setColor(ColorRGBA.White);
         rootNode.addLight(ambient);
         
-        //Spatial bm = assetManager.loadModel("Models/Sinbad/Character_fix.j3o");
-        //rootNode.attachChild(bm);
+        Spatial bm = assetManager.loadModel("Models/Character_fixbckup/Character_fixbckup.j3o");
+        rootNode.attachChild(bm);
+        
+        Spatial scene=assetManager.loadModel("Scenes/newScene.j3o");
+        rootNode.attachChild(scene);
         
         AbstractHeightMap heightmap = null;
         Texture heightMapImage = assetManager.loadTexture(
