@@ -12,6 +12,9 @@ import com.jme3.scene.Geometry;
 import com.jme3.scene.Spatial;
 import com.jme3.scene.shape.Box;
 import com.jme3.system.AppSettings;
+import com.jme3.terrain.heightmap.AbstractHeightMap;
+import com.jme3.terrain.heightmap.ImageBasedHeightMap;
+import com.jme3.texture.Texture;
 
 
 /**
@@ -35,7 +38,7 @@ public class Main extends SimpleApplication {
     @Override
     public void simpleInitApp() {
         
-        this.flyCam.setEnabled(true);
+        this.flyCam.setEnabled(false);
         this.setDisplayFps(false);
         
         DirectionalLight ambient = new DirectionalLight();
@@ -43,8 +46,14 @@ public class Main extends SimpleApplication {
         ambient.setColor(ColorRGBA.White);
         rootNode.addLight(ambient);
         
-        Spatial bm = assetManager.loadModel("Models/Ivan-model.blend");
-        rootNode.attachChild(bm);
+        //Spatial bm = assetManager.loadModel("Models/Sinbad/Character_fix.j3o");
+        //rootNode.attachChild(bm);
+        
+        AbstractHeightMap heightmap = null;
+        Texture heightMapImage = assetManager.loadTexture(
+            "Textures/Terrain/splat/mountains512.png");
+        heightmap = new ImageBasedHeightMap(heightMapImage.getImage());
+        heightmap.load();
     }
 
     @Override
