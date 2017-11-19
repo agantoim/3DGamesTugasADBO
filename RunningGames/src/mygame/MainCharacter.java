@@ -20,8 +20,8 @@ public class MainCharacter {
     
     public MainCharacter(Spatial mainChar){
         mainPlayer=mainChar;
-        mainPlayer.setLocalScale(1);
-        mainPlayer.setLocalTranslation(50, 0, 0);
+        //mainPlayer.setLocalScale(300);
+        //mainPlayer.setLocalTranslation(50, 0, 0);
         BoundingBox boundingBox=(BoundingBox) mainPlayer.getWorldBound();
         float radius=boundingBox.getXExtent();
         float height=boundingBox.getYExtent();

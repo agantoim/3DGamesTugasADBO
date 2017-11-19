@@ -9,6 +9,7 @@ import com.jme3.light.DirectionalLight;
 import static com.jme3.light.Light.Type.Ambient;
 import com.jme3.material.Material;
 import com.jme3.math.ColorRGBA;
+import com.jme3.math.Matrix3f;
 import com.jme3.math.Vector3f;
 import com.jme3.renderer.Camera;
 import com.jme3.renderer.RenderManager;
@@ -58,8 +59,8 @@ public class Main extends SimpleApplication {
 //        flyCam.setMoveSpeed(500);
 
         //set Camera to main character position
-        camera.setLocation(new Vector3f(100,25,-35));
-        camera.lookAt(new Vector3f(0,0,75), new Vector3f(0,0,0));
+        camera.setLocation(new Vector3f(100,24,-35));
+        camera.lookAt(new Vector3f(0,-10,50), new Vector3f(0,0,0));
         this.flyByCamera.setEnabled(true);
         flyCam.setMoveSpeed(500);
         
@@ -70,8 +71,11 @@ public class Main extends SimpleApplication {
         rootNode.addLight(ambient);
         
         //Load Main Character
-        mainChar=new MainCharacter(assetManager.loadModel("Models/Sinbad/Quixote.j3o"));
-        //Spatial mainChar=assetManager.loadModel("Models/Sinbad/Quixote.j3o");
+        //mainChar=new MainCharacter(assetManager.loadModel("Models/Sinbad/Quixote.j3o"));
+        Spatial mainChar=assetManager.loadModel("Models/Sinbad/Quixote.j3o");
+        rootNode.attachChild(mainChar);
+        mainChar.setLocalTranslation(75, 10, 0);
+        mainChar.rotate(0, -1.6f, 0);
         
         //Load scene1
         Spatial scene1 = assetManager.loadModel("Scenes/Scene1.j3o");
@@ -83,11 +87,17 @@ public class Main extends SimpleApplication {
         scene2.setLocalTranslation(-256, 0, 0);
         
         
+        Spatial scene3 =assetManager.loadModel("Scenes/Scene2.j3o");
+        rootNode.attachChild(scene3);
+        scene3.rotate(0, 22, 0);
+        scene3.setLocalTranslation(-512, 0, 0);
         
-        //Texture bckgdTex = assetManager.loadTexture("Textures/Sky/sky1.jpg");
         
-        
-        
+        Spatial scene4 = assetManager.loadModel("Scenes/Scene1.j3o");
+        scene4.rotate(0, 22, 0);
+        scene4.setLocalTranslation(-768, 0, 0);
+        rootNode.attachChild(scene4);
+
         
 //        AbstractHeightMap heightmap = null;
 //        Texture heightMapImage = assetManager.loadTexture(
