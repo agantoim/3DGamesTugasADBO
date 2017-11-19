@@ -20,27 +20,14 @@ public class Obstacle {
     protected Spatial obstacle;
     public Obstacle(Spatial ob)
     {
-        Random r=new Random();
-        int rand=r.nextInt(2)+1;
-        ob.setLocalTranslation(0, rand, 57);
-        this.obstacle=ob;
-        BoundingBox boundingBox =(BoundingBox) obstacle.getWorldBound();
-        float radius=boundingBox.getXExtent();
-        float height=boundingBox.getYExtent();
         
-        CapsuleCollisionShape playerShape=new CapsuleCollisionShape(radius,height);
-        
-        obsControl=new CharacterControl(playerShape,1.0f);
-        obstacle.addControl(obsControl);
     }
-
     
-    
-    public CharacterControl getRintanganControl() {
+    public CharacterControl getObsControl() {
         return obsControl;
     }
 
-    public Spatial getRintangan() {
+    public Spatial getObstacle() {
         return obstacle;
     }
     
